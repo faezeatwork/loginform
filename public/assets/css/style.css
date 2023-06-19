@@ -4,6 +4,67 @@
   font-weight: normal;
   font-style: normal;
 }
+/* ------------------------------------------------------ */
+.Name::-webkit-input-placeholder {
+  color: red;
+  font-size: 1em;
+}
+.Name:-moz-placeholder {
+  color: red;
+  font-family: Glyphicons Halflings;
+  font-size: 1em;
+}
+.Name::-moz-placeholder {
+  color: red;
+  font-family: Glyphicons Halflings;
+  font-size: 1em;
+}
+.Name:-ms-input-placeholder {
+  color: red;
+  font-family: ;
+  font-size: 1em;
+}
+.Mail::-webkit-input-placeholder {
+  color:rgb(114, 114, 114);;
+  font-family: Glyphicons Halflings;
+  font-size: 1em;
+}
+.Mail:-moz-placeholder {
+  color:rgb(114, 114, 114);
+  font-family: Glyphicons Halflings;
+  font-size: 1em;
+}
+.Mail::-moz-placeholder {
+  color:rgb(114, 114, 114);
+  font-family: Glyphicons Halflings;
+  font-size: 1em;
+}
+.Mail:-ms-input-placeholder {
+  color:rgb(114, 114, 114);
+  font-family: Glyphicons Halflings;
+  font-size: 1em;
+}
+.Message::-webkit-input-placeholder {
+  color: green;
+  font-family: Glyphicons Halflings;
+  font-size: 1.5em;
+}
+.Message:-moz-placeholder {
+  color: green;
+  font-family: Glyphicons Halflings;
+  font-size: 1.5em;
+}
+.Message::-moz-placeholder {
+  color: green;
+  font-family: Glyphicons Halflings;
+  font-size: 1.5em;
+}
+.Message:-ms-input-placeholder {
+  color: green;
+  font-family: Glyphicons Halflings;
+  font-size: 1.5em;
+}
+/* ------------------------------------------------------ */
 
 html,
 #root {
@@ -11,7 +72,7 @@ html,
 }
 
 body {
-  direction: rtl;
+  /* direction: rtl; */
   padding: 0;
   margin: 0;
   width: 100%;
@@ -32,13 +93,22 @@ body {
 
 .customForm {
   width: 400px;
+  height: 300px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
+  box-shadow: 2px 0px 20px white;
+  background-color: rgba(240, 248, 255, 0.671);
+  border: 1px solid rgba(255, 208, 0, 0.644)
 }
 
-.customRegister {
+.customRegisterLink {
   width: 400px;
   height: 120px;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
+  box-shadow: 2px 0px 20px white;
+  background-color: rgba(240, 248, 255, 0.671);
+  border: 1px solid rgba(255, 208, 0, 0.644);
+  color:rgb(75, 75, 75)
 }
+
