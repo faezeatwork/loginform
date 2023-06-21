@@ -27,7 +27,7 @@ export const LoginInputs = () => {
         <img
           src="../assets/images/user-image.png"
           alt="user image"
-          className="w-50 h-50"
+          className="w-25 h-25"
         />
       </div>
       <Formik

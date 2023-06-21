@@ -10,7 +10,7 @@ const Inputs = (props) => {
         type={type}
         name={name}
         placeholder={placeholder}
-        className={`${iconStyle} input-group-text rounded-pill shadow-lg`}
+        className={`${iconStyle} input-group-text rounded-pill shadow-lg m-0`}
       />
       <ErrorMessage name={name} render={(d)=><small className="smallFont">{d}</small>}/>
     </div>
