@@ -21,7 +21,6 @@
 }
 .Name:-ms-input-placeholder {
   color: red;
-  font-family: ;
   font-size: 1em;
 }
 .Mail::-webkit-input-placeholder {
@@ -112,3 +111,7 @@ body {
   color:rgb(75, 75, 75)
 }
 
+.smallFont{
+  font-size: 10px;
+  color: red;
+}

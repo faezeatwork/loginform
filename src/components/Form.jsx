@@ -1,5 +1,6 @@
 import React from "react";
 import { LoginInputs } from "./LoginInputs";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
 export default function Form() {
   return (
@@ -10,7 +11,7 @@ export default function Form() {
         </div>
         <div className=" mt-2 customRegisterLink ">
           <div className=" h-100 d-flex justify-content-center align-items-center fs-4">
-            Register
+        <  AiOutlineArrowLeft/>  Register
           </div>
         </div>
       </div>
