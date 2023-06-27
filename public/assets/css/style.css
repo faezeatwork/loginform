@@ -80,9 +80,6 @@ body {
   background-position: center;
   background-size: cover;
 }
-.marginCustom {
-  /* margin-top: 5%; */
-}
 
 .pointer {
   cursor: pointer;
@@ -91,27 +88,35 @@ body {
 /* ----------------------------------------------------------------------------- */
 
 .customForm {
-  width: 350px;
-  height: 350px;
+  width: 500px;
+  height: 450px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  box-shadow: 2px 0px 20px rgb(47, 255, 82);
+  box-shadow: 2px 0px 20px rgba(68, 47, 255, 0.212);
   background-color: rgba(240, 248, 255, 0.671);
-  border: 1px solid rgb(47, 255, 82)
+  border: 1px solid  rgba(68, 47, 255, 0.212);
 }
 
 .customRegisterLink {
-  width: 350px;
-  height: 120px;
+  width: 500px;
+  height: 150px;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
-  box-shadow: 2px 0px 20px rgb(47, 255, 82);
+  box-shadow: 2px 0px 20px rgba(68, 47, 255, 0.212);
   background-color: rgba(240, 248, 255, 0.671);
-  border: 1px solid rgb(47, 255, 82);
+  border: 1px solid  rgba(68, 47, 255, 0.212);
   color: rgb(104, 104, 104);
 }
 
 .smallFont {
-  font-size: 10px;
+  font-size: 12px;
   color: red;
+}
+
+.loginInputStyle{
+  width: 400px;
+}
+
+.registerInputStyle{
+  width:200px ;
 }

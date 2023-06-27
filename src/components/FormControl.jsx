@@ -8,5 +8,14 @@ export const FormControl = (props) => {
 
     case "password":
       return <Inputs {...props} />;
+
+    case "firstName":
+      return <Inputs {...props} />;
+
+    case "lastName":
+      return <Inputs {...props} />;
+
+    case "username":
+      return <Inputs {...props} />;
   }
 };
