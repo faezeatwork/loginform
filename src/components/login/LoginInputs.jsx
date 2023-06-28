@@ -16,7 +16,7 @@ export const LoginInputs = () => {
         return (
           <Form>
             <FormControl
-              control="email"
+              control="input"
               type="email"
               name="email"
               placeholder="&#x2709; email ID"
@@ -24,7 +24,7 @@ export const LoginInputs = () => {
               inputStyle="loginInputStyle"
             />
             <FormControl
-              control="password"
+              control="input"
               type="password"
               name="password"
               placeholder="&#xe167;  password"

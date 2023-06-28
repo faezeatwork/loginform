@@ -2,7 +2,7 @@ import { ErrorMessage, FastField } from "formik";
 import React from "react";
 
 const Inputs = (props) => {
-  const { type, name, placeholder, iconStyle , inputStyle } = props;
+  const { type, name, placeholder, iconStyle, inputStyle ,errMsg} = props;
   return (
     <div className="">
       <label htmlFor=""></label>
@@ -10,9 +10,14 @@ const Inputs = (props) => {
         type={type}
         name={name}
         placeholder={placeholder}
-        className={`${iconStyle} input-group-text rounded-pill shadow-lg m-0 ${inputStyle}`}
+        className={`${iconStyle} input-group-text rounded-pill shadow-lg ${inputStyle}`}
       />
-      <ErrorMessage name={name} render={(d)=><small className="smallFont">{d}</small>}/>
+      <div className={`${errMsg}`}>
+        <ErrorMessage
+          name={name}
+          render={(d) => <small className="smallFont">{d}</small>}
+        />
+      </div>
     </div>
   );
 };

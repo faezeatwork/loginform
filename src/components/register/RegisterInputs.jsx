@@ -4,6 +4,10 @@ import { Form, Formik } from "formik";
 import { initialValues, onSubmit, validationSchema } from "../formikAttribute";
 
 export const RegisterInputs = () => {
+  const ItemValidationTypeRadio = [
+    { id: 0, name: "phone" },
+    { id: 1, name: "email" },
+  ];
   return (
     <Formik
       initialValues={initialValues}
@@ -13,58 +17,84 @@ export const RegisterInputs = () => {
       {(formik) => {
         return (
           <Form>
-            <div>
+            <div className="">
               <div className="d-flex ">
                 <FormControl
-                  control="firstName"
+                  control="input"
                   type="text"
                   name="firstName"
                   placeholder="first name"
-                  inputStyle='registerInputStyle'
+                  inputStyle="registerInputStyle"
                 />
                 <FormControl
-                  control="lastName"
+                  control="input"
                   type="text"
                   name="lastName"
                   placeholder="last name"
-                  inputStyle='registerInputStyle'
+                  inputStyle="registerInputStyle"
                 />
               </div>
-
+              <div>
+                <FormControl
+                  control="validation-type"
+                  type="radio"
+                  label="validation type"
+                  nameOfItem={ItemValidationTypeRadio}
+                  name="validationType"
+                />
+              </div>
               <div className="d-flex ">
                 <FormControl
-                  control="username"
+                  control="input"
                   type="text"
                   name="username"
                   placeholder="username"
-                  inputStyle='registerInputStyle'
+                  inputStyle="registerInputStyle"
                 />
-                <FormControl
-                  control="email"
-                  type="email"
-                  name="email"
-                  placeholder="email"
-                  inputStyle='registerInputStyle'
-                />
+                {ItemValidationTypeRadio.name == "phone" ? (
+                  <FormControl
+                    control="input"
+                    type="number"
+                    name="phone"
+                    placeholder="phone"
+                    inputStyle="registerInputStyle"
+                  />
+                ) : (
+                  <FormControl
+                    control="input"
+                    type="email"
+                    name="email"
+                    placeholder="email"
+                    inputStyle="registerInputStyle"
+                  />
+                )}
               </div>
-              
+
               <div className="d-flex ">
                 <FormControl
-                  control="password"
+                  control="input"
                   type="password"
                   name="password"
                   placeholder="password"
-                  inputStyle='registerInputStyle'
+                  inputStyle="registerInputStyle"
+                  errMsg="divErrMsg"
                 />
                 <FormControl
-                  control="password"
+                  control="input"
                   type="password"
-                  name="password"
+                  name="confirmPassword"
                   placeholder="confirm password"
-                  inputStyle='registerInputStyle'
+                  inputStyle="registerInputStyle"
                 />
               </div>
-
+            </div>
+            <div className="p-3 d-flex justify-content-center">
+              <button
+                type="submit"
+                className="btn btn-success w-75 rounded-pill me-3"
+              >
+                Register
+              </button>
             </div>
           </Form>
         );
