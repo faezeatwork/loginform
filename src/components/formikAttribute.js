@@ -6,7 +6,9 @@ export const initialValues = {
   username: "",
   email: "",
   password: "",
-  validationType: "phone",
+  phone: "",
+  confirmPassword: "",
+  auth_mode: "phone",
 };
 
 export const validationSchema = Yup.object({

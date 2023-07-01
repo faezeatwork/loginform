@@ -5,8 +5,8 @@ import { initialValues, onSubmit, validationSchema } from "../formikAttribute";
 
 export const RegisterInputs = () => {
   const ItemValidationTypeRadio = [
-    { id: 0, name: "phone" },
-    { id: 1, name: "email" },
+    { id: "phone", name: "phone" },
+    { id: "email", name: "email" },
   ];
   return (
     <Formik
@@ -15,11 +15,14 @@ export const RegisterInputs = () => {
       validationSchema={validationSchema}
     >
       {(formik) => {
+        // console.log(formik);
+        console.log(formik.values.auth_mode);
         return (
           <Form>
             <div className="">
               <div className="d-flex ">
                 <FormControl
+                  formik={formik}
                   control="input"
                   type="text"
                   name="firstName"
@@ -27,6 +30,7 @@ export const RegisterInputs = () => {
                   inputStyle="registerInputStyle"
                 />
                 <FormControl
+                  formik={formik}
                   control="input"
                   type="text"
                   name="lastName"
@@ -34,25 +38,20 @@ export const RegisterInputs = () => {
                   inputStyle="registerInputStyle"
                 />
               </div>
-              <div>
+              {/* <div>
                 <FormControl
+                  formik={formik}
                   control="validation-type"
                   type="radio"
                   label="validation type"
                   nameOfItem={ItemValidationTypeRadio}
-                  name="validationType"
+                  name="auth_mode"
                 />
-              </div>
+              </div> */}
               <div className="d-flex ">
-                <FormControl
-                  control="input"
-                  type="text"
-                  name="username"
-                  placeholder="username"
-                  inputStyle="registerInputStyle"
-                />
-                {ItemValidationTypeRadio.name == "phone" ? (
+                {formik.values.auth_mode == "phone" ? (
                   <FormControl
+                    formik={formik}
                     control="input"
                     type="number"
                     name="phone"
@@ -61,6 +60,7 @@ export const RegisterInputs = () => {
                   />
                 ) : (
                   <FormControl
+                    formik={formik}
                     control="input"
                     type="email"
                     name="email"
@@ -68,10 +68,19 @@ export const RegisterInputs = () => {
                     inputStyle="registerInputStyle"
                   />
                 )}
+                <FormControl
+                  formik={formik}
+                  control="input"
+                  type="text"
+                  name="username"
+                  placeholder="username"
+                  inputStyle="registerInputStyle"
+                />
               </div>
 
               <div className="d-flex ">
                 <FormControl
+                  formik={formik}
                   control="input"
                   type="password"
                   name="password"
@@ -80,6 +89,7 @@ export const RegisterInputs = () => {
                   errMsg="divErrMsg"
                 />
                 <FormControl
+                  formik={formik}
                   control="input"
                   type="password"
                   name="confirmPassword"
@@ -91,10 +101,20 @@ export const RegisterInputs = () => {
             <div className="p-3 d-flex justify-content-center">
               <button
                 type="submit"
-                className="btn btn-success w-75 rounded-pill me-3"
+                className="btn btn-success w-75 rounded-pill mt-2"
               >
                 Register
               </button>
+            </div>
+            <div>
+              <FormControl
+                formik={formik}
+                control="validation-type"
+                type="radio"
+                label="validation type"
+                nameOfItem={ItemValidationTypeRadio}
+                name="auth_mode"
+              />
             </div>
           </Form>
         );
