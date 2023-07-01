@@ -10,7 +10,7 @@ export const RadioBtns = (props) => {
       </label>
       <FastField id={name} name={name}>
         {({ field }) => {
-          console.log(field);
+          // console.log(field);
           return nameOfItem.map((i) => (
             <div className="form-check me-2" key={i.id}>
               <Fragment>

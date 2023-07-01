@@ -16,10 +16,11 @@ export const RegisterInputs = () => {
     >
       {(formik) => {
         // console.log(formik);
-        console.log(formik.values.auth_mode);
+        // console.log(formik.values.auth_mode);
         return (
           <Form>
             <div className="">
+              {/* ====== first name , last name inputs ===== */}
               <div className="d-flex ">
                 <FormControl
                   formik={formik}
@@ -38,16 +39,7 @@ export const RegisterInputs = () => {
                   inputStyle="registerInputStyle"
                 />
               </div>
-              {/* <div>
-                <FormControl
-                  formik={formik}
-                  control="validation-type"
-                  type="radio"
-                  label="validation type"
-                  nameOfItem={ItemValidationTypeRadio}
-                  name="auth_mode"
-                />
-              </div> */}
+              {/* ===== phone/email , username inputs ===== */}
               <div className="d-flex ">
                 {formik.values.auth_mode == "phone" ? (
                   <FormControl
@@ -77,7 +69,7 @@ export const RegisterInputs = () => {
                   inputStyle="registerInputStyle"
                 />
               </div>
-
+              {/* ===== password , confirmation inputs ======= */}
               <div className="d-flex ">
                 <FormControl
                   formik={formik}
@@ -106,6 +98,7 @@ export const RegisterInputs = () => {
                 Register
               </button>
             </div>
+            {/* ====== validation type radio button ====== */}
             <div>
               <FormControl
                 formik={formik}
