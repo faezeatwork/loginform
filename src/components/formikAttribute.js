@@ -11,6 +11,7 @@ export const initialValues = {
   confirmPassword: "",
   auth_mode: "email",
   booleanTest: true,
+  birthday_date: "",
 };
 
 export const validationSchema = Yup.object({
@@ -47,6 +48,8 @@ export const validationSchema = Yup.object({
   confirmPassword: Yup.string()
     .oneOf([Yup.ref("password"), null], "Passwords must match")
     .required("It is required"),
+
+    birthday_date :Yup.string().required("It is required")
 });
 
 export const onSubmit = (value) => {

@@ -1,6 +1,7 @@
 import React from "react";
 import Inputs from "./Inputs";
 import { RadioBtns } from "./RadioBtns";
+import Date from "./Date";
 
 export const FormControl = (props) => {
   switch (props.control) {
@@ -9,5 +10,8 @@ export const FormControl = (props) => {
 
     case "validation-type":
       return <RadioBtns {...props} />;
+
+    case "date":
+      return <Date {...props} />;
   }
 };

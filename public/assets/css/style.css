@@ -89,7 +89,7 @@ body {
 
 .customForm {
   width: 500px;
-  height: 500px;
+  height: 600px;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   box-shadow: 2px 0px 20px rgba(68, 47, 255, 0.212);
@@ -108,7 +108,6 @@ body {
   color: rgb(104, 104, 104);
 }
 
-
 .smallFont {
   font-size: 12px;
   color: red;
@@ -124,4 +123,19 @@ body {
 
 .formIcon {
   width: 100px;
+}
+
+.dateDiv {
+  position: absolute;
+  top: 0px;
+  height:45px;
+  margin-left: 1px;
+  width: 402px;
+  margin-top: 20px;
+  /* background-color: #e9ecef;
+  border: 1px solid rgb(209, 209, 209); */
+}
+
+.selectBox{
+  height: 40px;
 }

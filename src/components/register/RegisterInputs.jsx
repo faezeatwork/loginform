@@ -39,6 +39,7 @@ export const RegisterInputs = () => {
                   inputStyle="registerInputStyle"
                 />
               </div>
+
               {/* ===== phone/email , username inputs ===== */}
               <div className="d-flex ">
                 {formik.values.auth_mode == "phone" ? (
@@ -69,6 +70,18 @@ export const RegisterInputs = () => {
                   inputStyle="registerInputStyle"
                 />
               </div>
+
+              {/* ============ date input ============== */}
+              <div>
+                <FormControl
+                  formik={formik}
+                  type="text"
+                  control="date"
+                  name="Date_of_birth"
+                  placeholder="Date of birth"
+                />
+              </div>
+
               {/* ===== password , confirmation inputs ======= */}
               <div className="d-flex ">
                 <FormControl
@@ -90,6 +103,8 @@ export const RegisterInputs = () => {
                 />
               </div>
             </div>
+
+            {/* ================= Register btn ================== */}
             <div className="p-3 d-flex justify-content-center">
               <button
                 type="submit"
@@ -98,6 +113,7 @@ export const RegisterInputs = () => {
                 Register
               </button>
             </div>
+
             {/* ====== validation type radio button ====== */}
             <div>
               <FormControl
