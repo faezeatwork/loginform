@@ -26,15 +26,16 @@ export const validationSchema = Yup.object({
     .required("It is required")
     .matches(/^[a-z ,.'-]+$/i, "Use only letters"),
 
-  email: Yup.string()
-    .required("It is required")
-    .email("Format example: aaa@example.bbb"),
- 
-  phone: Yup.number()
-    .positive("It can't start with a minus")
-    .integer("It can't include a decimal point ")
-    .min(8)
-    .required("It is required"),
+  email: Yup.string().when("auth_mode", {
+    is: "email",
+    then: () =>
+      Yup.string().email("Invalid email address").required("It is required"),
+  }),
+
+  phone: Yup.number().when("auth_mode", {
+    is: "phone",
+    then: () => Yup.number().required("It is required"),
+  }),
 
   password: Yup.string()
     .required("It is required")
