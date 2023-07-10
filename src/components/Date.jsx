@@ -26,7 +26,7 @@ const Date = ({ formik, name, placeholder, type }) => {
   const [day, setDay] = useState();
   const [month, setMonth] = useState();
   const [year, setYear] = useState();
-  const [years, setYears] = useState([]); //chonke sal haei ke namayesh dade mishe static nabashe va dynamic bash
+  const [years, setYears] = useState([]); //chonke sal haei ke namayesh dade mishe static nabashe va dynamic bashe⭐
   const [showConfig, setShowConfig] = useState(false);
 
   useEffect(() => {
@@ -34,12 +34,12 @@ const Date = ({ formik, name, placeholder, type }) => {
     setYear(now.jYear());
     setMonth(now.jMonth());
     setDay(now.jDayOfYear());
-    // console.log(now.jYear() + "/" + now.jMonth() + "/" + now.jDate());
+    // console.log(formik);
   }, []);
 
   const handleShowDateConfig = () => {
-    //baresi kone dar che sali hastim va state years ro meqdar dehi kone
-
+    //😊 baresi kone dar che sali hastim
+    //va state years ro meqdar dehi kone
     let arrOfYears = [];
     for (let index = parseInt(year) - 100; index <= parseInt(year); index++) {
       arrOfYears = [...arrOfYears, index];
@@ -51,12 +51,20 @@ const Date = ({ formik, name, placeholder, type }) => {
   const handleSetDateOfBirth = (e) => {
     e.stopPropagation(); //ba tag valedet kari nadashte bash
     setShowConfig(false);
-   
+    formik.setValues({
+      ...formik.values,
+      [name]: `${year}/${month}/${day}`,
+    });
   };
   return (
     <div className="position-relative">
       <label htmlFor=""></label>
-      <div onClick={handleShowDateConfig}>
+      <div
+        onClick={() => {
+          handleShowDateConfig();
+          // console.log(birthDateInput);
+        }}
+      >
         <FastField
           name={name}
           type={type}
@@ -65,12 +73,22 @@ const Date = ({ formik, name, placeholder, type }) => {
           disabled
         />
       </div>
+      
       {showConfig ? (
         <div className="dateDiv rounded-pill row d-flex justify-content-center align-items-center">
           <div className="col-1 text-success" onClick={handleSetDateOfBirth}>
-            <i className="fa-solid fa-thumbs-up pointer"></i>
+            <i
+              className="fa-solid fa-thumbs-up pointer"
+              onClick={(e) => {
+                handleSetDateOfBirth(e);
+                console.log(`${year}/${month}/${day}`);
+              }}
+            ></i>{" "}
+            {/* icon 👍 */}
           </div>
           <div className="col-3 p-0 m-0 ">
+            {" "}
+            {/*select box YEAR*/}
             <select
               value={year}
               onChange={(e) => setYear(e.target.value)}
@@ -84,19 +102,23 @@ const Date = ({ formik, name, placeholder, type }) => {
             </select>
           </div>
           <div className="col-4 p-0 m-0">
+            {" "}
+            {/*select box MONTH*/}
             <select
               value={month}
               onChange={(e) => setMonth(e.target.value)}
               className="selectBox form-select"
             >
               {months.map((m) => (
-                <option value={m.value} key={m.value}>
+                <option value={m.id} key={m.value}>
                   {m.value}
                 </option>
               ))}
             </select>
           </div>
-          <div className=" col-2 p-0 m-0">
+          <div className="col-2 p-0 m-0">
+            {" "}
+            {/*select box DAY*/}
             <select
               value={day}
               onChange={(e) => setDay(e.target.value)}
@@ -112,7 +134,8 @@ const Date = ({ formik, name, placeholder, type }) => {
         </div>
       ) : null}
 
-      <div>
+
+      <div className="test_ErrorMessage">
         <ErrorMessage
           name={name}
           render={(d) => <small className="smallFont">{d}</small>}

@@ -77,7 +77,7 @@ export const RegisterInputs = () => {
                   formik={formik}
                   type="text"
                   control="date"
-                  name="Date_of_birth"
+                  name="date_of_birth"
                   placeholder="Date of birth"
                 />
               </div>
@@ -103,7 +103,15 @@ export const RegisterInputs = () => {
                 />
               </div>
             </div>
+            {/*================ Choose file input ================*/}
 
+            <FormControl
+              formik={formik}
+              control="file"
+              type="file"
+              name="choose_file"
+              placeholder="Choose a file"
+            />
             {/* ================= Register btn ================== */}
             <div className="p-3 d-flex justify-content-center">
               <button

@@ -2,6 +2,7 @@ import React from "react";
 import Inputs from "./Inputs";
 import { RadioBtns } from "./RadioBtns";
 import Date from "./Date";
+import { File } from "./File";
 
 export const FormControl = (props) => {
   switch (props.control) {
@@ -13,5 +14,8 @@ export const FormControl = (props) => {
 
     case "date":
       return <Date {...props} />;
+
+    case "file":
+      return <File {...props} />;
   }
 };
