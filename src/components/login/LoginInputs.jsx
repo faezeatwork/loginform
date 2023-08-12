@@ -15,21 +15,23 @@ export const LoginInputs = () => {
         // console.log(formik);
         return (
           <Form>
-            <FormControl
-              control="input"
-              type="email"
-              name="email"
-              placeholder="&#x2709; email ID"
-              iconStyle="Mail"
-              inputStyle="loginInputStyle"
-            />
-            <FormControl
-              control="input"
-              type="password"
-              name="password"
-              placeholder="&#xe167;  password"
-              inputStyle="loginInputStyle"
-            />
+            <div className="loginInputs">
+              <FormControl
+                control="input"
+                type="email"
+                name="email"
+                placeholder="&#x2709; email ID"
+                iconStyle="Mail"
+                inputStyle="loginInputStyle"
+              />
+              <FormControl
+                control="input"
+                type="password"
+                name="password"
+                placeholder="&#xe167;  password"
+                inputStyle="loginInputStyle"
+              />
+            </div>
             <div className="p-3 d-flex justify-content-center">
               <button
                 type="submit"

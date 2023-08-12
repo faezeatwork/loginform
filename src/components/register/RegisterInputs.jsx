@@ -19,7 +19,7 @@ export const RegisterInputs = () => {
         // console.log(formik.values.auth_mode);
         return (
           <Form>
-            <div className="">
+            <div className="inputsOfRegister">
               {/* ====== first name , last name inputs ===== */}
               <div className="d-flex ">
                 <FormControl
@@ -42,7 +42,7 @@ export const RegisterInputs = () => {
 
               {/* ===== phone/email , username inputs ===== */}
               <div className="d-flex ">
-                {formik.values.auth_mode == "phone" ? (
+                {formik.values.auth_mode === "phone" ? (
                   <FormControl
                     formik={formik}
                     control="input"
@@ -71,17 +71,6 @@ export const RegisterInputs = () => {
                 />
               </div>
 
-              {/* ============ date input ============== */}
-              <div>
-                <FormControl
-                  formik={formik}
-                  type="text"
-                  control="date"
-                  name="date_of_birth"
-                  placeholder="Date of birth"
-                />
-              </div>
-
               {/* ===== password , confirmation inputs ======= */}
               <div className="d-flex ">
                 <FormControl
@@ -102,16 +91,31 @@ export const RegisterInputs = () => {
                   inputStyle="registerInputStyle"
                 />
               </div>
-            </div>
-            {/*================ Choose file input ================*/}
 
-            <FormControl
-              formik={formik}
-              control="file"
-              type="file"
-              name="choose_file"
-              placeholder="Choose a file"
-            />
+              {/* ============ date of birth input ============== */}
+              <div>
+                <FormControl
+                  formik={formik}
+                  type="text"
+                  control="date"
+                  name="dateOfBirth"
+                  placeholder="Date of birth"
+                />
+              </div>
+
+              {/*================= Choose a file ====================*/}
+              <div>
+                <FormControl
+                  formik={formik}
+                  type="file"
+                  control="file"
+                  name="choose_file"
+                  placeholder="Choose a file"
+                  inputStyle="registerInputStyle"
+                />
+              </div>
+            </div>
+
             {/* ================= Register btn ================== */}
             <div className="p-3 d-flex justify-content-center">
               <button

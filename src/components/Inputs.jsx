@@ -2,9 +2,9 @@ import { ErrorMessage, FastField } from "formik";
 import React from "react";
 
 const Inputs = (props) => {
-  const { type, name, placeholder, iconStyle, inputStyle ,errMsg} = props;
+  const { type, name, placeholder, iconStyle, inputStyle, errMsg } = props;
   return (
-    <div className=" col-6">
+    <div className="col-6">
       <label htmlFor=""></label>
       <FastField
         type={type}

@@ -1,32 +1,30 @@
-import { ErrorMessage, FastField } from "formik";
-import React, { useEffect } from "react";
+import { ErrorMessage } from "formik";
+import React from "react";
 
-export const File = ({ formik, name, type, placeholder }) => {
+export const File = (props) => {
+  const { formik, type, name, placeholder, inputStyle, errMsg } = props;
+  const handleSetFieldValue = (e) => {
+    formik.setFieldValue(name, e.target.files[0]);
+  };
   return (
-    <div className="w-100">
+    <div className=" col-12">
       <label htmlFor=""></label>
       <div className="position-relative">
         <input
-          type="text"
-          name={name}
-          className={`col-12 input-group-text rounded-pill shadow-lg`}
-          placeholder={placeholder}
           value={formik.values[name] ? formik.values[name].name : ""}
-          onChange={() => null}
+          onChange={() => {}}
+          type="text"
+          placeholder={placeholder}
+          className={` input-group-text rounded-pill shadow-lg ${inputStyle} w-100`}
         />
-
         <input
           type={type}
           name={name}
-          className={`chooseFile col-12 input-group-text rounded-pill shadow-lg`}
-          placeholder={placeholder}
-          onChange={(e) => {
-            formik.setFieldValue(name, e.target.files[0]);
-          }}
+          className={`chooseFile pointer input-group-text rounded-pill shadow-lg ${inputStyle} w-100`}
+          onChange={(e) => handleSetFieldValue(e)}
         />
       </div>
-
-      <div>
+      <div className={`${errMsg}`}>
         <ErrorMessage
           name={name}
           render={(d) => <small className="smallFont">{d}</small>}
